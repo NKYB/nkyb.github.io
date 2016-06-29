@@ -2,9 +2,9 @@
  *  InfiniteCell v1.0 - it never ends
  *  
  *  Description
- *  Use InfiniteCell to drag cells in any direction, infinitely, with preloading 
- *  of cells and unloading of cells for better performance, it even has a little 
- *  easing for your pleasure
+ *  Use InfiniteCell, a jquery plugin, to drag cells in any direction, 
+ *  infinitely, with preloading of cells and unloading of cells for better 
+ *  performance, it even has a little easing for your pleasure
  * 
  *  Installation
  *  add <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -68,8 +68,13 @@
             add_top: function(){},
             add_bottom: function(){},
             render_cell: function(self){
+                var currentdate = new Date(); 
+                var datetime = "Created: " 
+                    + currentdate.getHours() + ":"  
+                    + currentdate.getMinutes() + ":" 
+                    + currentdate.getSeconds();
                 var html = '';
-                html += '<div style="width:100%;height:100%;background-color:'+self._get_random_color()+'"></div>';
+                html += '<div style="width:100%;height:100%;padding:15px;font-size: 0.8em;font-family:Arial,Helvetica;background-color:'+self._get_random_color()+'">'+datetime+'</div>';
                 return html;
             }
         };
